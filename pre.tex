@@ -1,0 +1,65 @@
+%%%よく使われるであろうパッケージ群%%%
+%%% AMS %%%
+\usepackage{amsmath,amssymb, amsthm}
+
+%%% Japanese %%%
+\usepackage{pxrubrica}
+
+%%%%%% hyperref %%%%%%
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+citecolor=red,
+linkcolor=blue,
+urlcolor=blue,
+}
+
+%%% Tikz %%%
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{tikzmark,calc,topaths}
+
+%%% Packages for writing support %%%
+\usepackage[l2tabu, orthodox]{nag}
+
+%%% cleveref %%%
+\usepackage{cleveref}
+\newcommand{\crefpairconjunction}{and}
+\newcommand{\crefrangeconjunction}{--}
+\newcommand{\crefmiddleconjunction}{, }
+\newcommand{\creflastconjunction}{, and}
+
+\crefname{section}{Section}{Sections}
+\crefname{subsection}{Section}{Sections}
+\crefname{appendix}{Appendix}{Appendices}
+\crefname{figure}{Figure}{Figures}
+\crefname{table}{Table}{Tables}
+\crefname{equation}{}{}
+\creflabelformat{equation}{#2(#1)#3}
+\crefname{enumi}{}{}
+\crefname{enumii}{}{}
+
+%%%%% amsthm %%%%%
+\theoremstyle{plain}% 
+\newtheorem{theorem}{Theorem}[section]
+\crefname{theorem}{Theorem}{Theorems}
+\newtheorem{lem}[theorem]{Lemma}
+\crefname{lem}{Lemma}{Lemmata}
+\newtheorem{prop}[theorem]{Proposition}
+\crefname{prop}{Proposition}{Propositions}
+\newtheorem{cor}[theorem]{Corollary}
+\crefname{cor}{Corollary}{Corollaries}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\crefname{definition}{Definition}{Definitions}
+\newtheorem{example}[theorem]{Example}
+\crefname{example}{Example}{Examples}
+
+\theoremstyle{remark}
+\newtheorem*{note}{Note}
+\newtheorem*{rem}{Remark}
+
+\renewcommand{\proofname}{\textnormal{\textbf{Proof.}}} %Japanese
+
+%%%%%% コマンドを定義したいものはこの下にコマンドを定義 %%%%%

@@ -1,0 +1,14 @@
+*.pdf
+*.dvi
+*.log
+*.aux
+_yatexrc
+.yatexrc
+*.html
+*.bak
+*.gz
+*.fdb_latexmk
+*.fls
+*.orig
+*.blg
+*.vtc

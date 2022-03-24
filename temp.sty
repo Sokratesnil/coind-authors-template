@@ -1,0 +1,37 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%このファイルは変更しないでください%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% フォントの指定 %%%%%
+%\usepackage{luatexja-fontspec}
+%\setmainfont{SourceHanSerif-Regular}
+%\setmainjfont[
+%BoldFont=SourceHanSerif-Heavy % 太字
+%]{SourceHanSerif-Regular}%
+
+%%%%% タイトル部分の設定  %%%%%
+\def\articletitle#1{\def\@articletitle{#1}}
+\def\articleauthor#1{\def\@articleauthor{#1}}
+\newcommand{\makearticletitle}{%
+{
+{\fontsize{24pt}{32pt}\selectfont
+ \textbf{\@articletitle}}
+
+ \vspace{1.5\zh}
+
+ \hfill \hspace{1\zw}\@articleauthor  
+}
+\vspace{2\zh}
+}
+
+%%%%% 数式環境の中のコンマの設定 %%%%%
+\begingroup
+\catcode`\,=\active
+\def\@x@{\def,{\normalcomma\hskip1em}}
+\expandafter\endgroup\@x@%
+\mathcode`\,="8000
+\def\normalcomma{\mathchar"613B}
+
+\medmuskip=4mu plus 1mu minus 2mu
