@@ -16,15 +16,29 @@
 \def\articleauthor#1{\def\@articleauthor{#1}}
 \newcommand{\makearticletitle}{%
 {
-{\fontsize{24pt}{32pt}\selectfont
- \textbf{\@articletitle}}
+{\fontsize{24pt}{24pt}\selectfont
+ \gtfamily\bfseries\@articletitle}
 
  \vspace{1.5\zh}
 
- \hfill \hspace{1\zw}\@articleauthor  
+ \hfill \hspace{1\zw}{\fontsize{16pt}{16pt}\selectfont
+ \gtfamily\bfseries\@articleauthor  }
 }
 \vspace{2\zh}
 }
+
+%%%%% 見出し命令の定義 %%%%%
+
+\SaveHeading{section}{\restoresection} % \section の中身を \restoresection に待避．
+\renewcommand*{\thesection}{\arabic{section}}
+\RenewBlockHeading{section}{1}{% \section を新しく定義する．
+    font={\gtfamily\bfseries\Large},
+    label_format={\thesection.},
+    before_space=2\zw,
+    after_space=2\zw,
+    align=left
+}
+
 
 %%%%% 数式環境の中のコンマの設定 %%%%%
 \begingroup
